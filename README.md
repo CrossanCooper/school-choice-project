@@ -1,2 +1,2 @@
 # school-choice-project
-School choice and housing market
+Effects of school choice on the housing market
