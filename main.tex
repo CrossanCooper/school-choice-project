@@ -1,0 +1,164 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{palatino}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{hyperref}
+\usepackage{color}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{placeins}
+\usepackage{natbib}
+\usepackage{rotating}
+\usepackage{graphicx} %\usepackage[pdftex]{graphicx}
+\usepackage{booktabs}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\bibliographystyle{aer}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{longtable,booktabs}
+\usepackage{subcaption}
+
+
+\usepackage[%disable,
+colorinlistoftodos, prependcaption, textsize=scriptsize]{todonotes}
+%\usepackage[]{hyperref}
+
+\definecolor{link}{gray}{0.5}
+\definecolor{uchile}{rgb}{0.13,0.13,0.44}
+\definecolor{dred}{rgb}{0.68,0.00,0.00}
+\definecolor{darkgray}{gray}{0.75}
+\definecolor{lgray}{rgb}{0.85,0.85,0.85}
+\definecolor{princeton}{rgb}{1.00,0.56,0.00}
+\definecolor{darkdarkgray}{gray}{0.05}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{pdflscape}
+\usepackage{lscape}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage{caption}
+
+\graphicspath{ {./images/} }
+
+
+%%---------------commands----------------------------
+
+\usepackage[colorlinks=true, pdfstartview=FitH, linkcolor=darkdarkgray, citecolor=darkdarkgray, urlcolor=parula4, bookmarks,bookmarksnumbered]{hyperref}
+\hypersetup{
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={empirical_paper},    % title
+    pdfauthor={},     % author
+    pdfsubject={},   % subject of the document
+    pdfcreator={},   % creator of the document
+    pdfkeywords={}, % list of keywords
+    pdfnewwindow=true,           % links in new PDF window
+    colorlinks=true,             % false: boxed links; true: colored links
+    linkcolor=Maroon,         % color of internal links (change box color with linkbordercolor)
+    citecolor=blue,          % color of links to bibliography
+    filecolor=uchile,           % color of file links
+    urlcolor=uchile           % color of external links
+}
+
+\def\qed{\rule{2mm}{2mm}}
+
+\parskip = 1.5ex plus 0.5 ex minus0.2 ex
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{assumption}{Assumption}[section]
+\newtheorem{algorithm}{Algorithm}[section]
+
+\setlength\parindent{0pt}
+
+\newcommand*{\h}{\hspace{5pt}}% for indentation
+\newcommand*{\hh}{\h\h}% double indentation
+
+%----------------------------------------------------------------------------------
+% ANNOTATIONS
+%----------------------------------------------------------------------------------
+\newcommand{\xxx}[2][show]{ % Replace "show" with any other word to hide solutions.
+ \ifthenelse{ \equal{#1}{show} }{ \textcolor{blue}{X #2 X}}{}}
+ \newcommand{\jeh}[2][show]{ % Replace "show" with any other word to hide solutions.
+ \ifthenelse{ \equal{#1}{show} }{ \textcolor{blue}{[JEH: #2 ]}}{}}
+\newcommand{\td}[1]{\todo[linecolor=green, backgroundcolor=green!25, bordercolor=green, inline]{TD: #1}}
+\newcommand{\note}[1]{\todo[linecolor=orange, backgroundcolor=orange!25, bordercolor=orange, inline]{NOTE: #1}}
+\newcommand{\org}[1]{\todo[linecolor=red, backgroundcolor=red!25, bordercolor=red, inline]{ORG: #1}}
+\newcommand{\question}[1]{\todo[linecolor=blue, backgroundcolor=blue!25, bordercolor=blue, inline]{QUESTION: #1}}
+\newcommand{\CN}[1]{\todo[linecolor=Violet, backgroundcolor=Violet!25, bordercolor=Violet, inline]{NM: #1}}
+\newcommand{\GU}[1]{\todo[linecolor=magenta, backgroundcolor=magenta!25, bordercolor=magenta, inline]{DT: #1}}
+\newcommand{\JEH}[1]{\todo[linecolor=cyan, backgroundcolor=cyan!25, bordercolor=cyan, inline]{JEH: #1}}
+\newcommand{\footnotespec}{\hspace{-.25in} \scriptsize{\setstretch{0.6}}}
+\newcommand{\rl}[1]{\addtolength{\extrarowheight}{#1 }}
+  \title{Housing Market Responses to School Choice}
+\author{
+\begin{tabular}{ccc}
+ Crossan Cooper \thanks{\scriptsize 
+Cooper: Department of Economics, Yale University (email: \href{mailto:crossan.cooper@yale.edu}{crossan.cooper@yale.edu}).} \\
+Yale University
+\end{tabular}
+}
+ \date{\normalsize
+\today} 
+\singlespacing
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\singlespacing
+\noindent ABSTRACT \\ 
+
+\text{} \\
+
+\noindent \textbf{Keywords:} \textit{TBD} 
+
+\end{abstract}
+\vfill
+
+%---------------------------------------------------------------------------------------
+\newpage
+\tableofcontents
+
+\doublespacing
+
+\newpage
+\section{Introduction}
+
+\clearpage
+\begin{singlespace}
+\bibliographystyle{chicago}
+\bibliography{ref}
+\end{singlespace}
+
+%=============== APPENDIX ======================================================
+%=======================================================================================
+\clearpage
+\let\origappendix\appendix % save the existing appendix command
+\renewcommand\appendix{\clearpage\pagenumbering{roman}\origappendix}
+
+\appendix
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\newpage
+
+\FloatBarrier
+
+
+%=======================================================================================
+\begin{center}
+    {\Large \textbf{APPENDIX \medskip \\}}
+\end{center}
+
+
+\end{document}
